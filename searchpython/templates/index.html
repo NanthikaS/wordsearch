@@ -1,0 +1,295 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Document Viewer</h1>
+        <button id="open-document-btn">
+            document_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+            if document_path:
+            with open(document_path, 'r') as file:
+             document_text.delete(1.0, tk.END)
+             document_text.insert(tk.END, file.read())
+        </button>
+        <textarea id="document-text" rows="20" cols="80" readonly></textarea>
+    </div>
+
+    <script>
+        // JavaScript code for opening document and searching word
+        document.getElementById("open-document-btn").addEventListener("click", function() {
+            // Simulate opening document (for demonstration purposes)
+            var documentText = "Sample text from the document";
+            // Replace this with actual document loading code
+
+            // Display the document text in the textarea
+            document.getElementById("document-text").value = documentText;
+        });
+
+        document.getElementById("document-text").addEventListener("mouseup", function() {
+            var selectedText = window.getSelection().toString();
+            if (selectedText) {
+                var searchQuery = "https://www.google.com/search?q=" + encodeURIComponent(selectedText);
+                window.open(searchQuery, "_blank");
+            }
+        });
+    </script>
+</body>
+
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search the Document</h1>
+        <form id="document-form" enctype="multipart/form-data">
+            <input type="file" name="document" id="document-input" accept=".txt">
+            <textarea id="document-text" rows="20" cols="80" readonly></textarea>
+            <button type="button" id="open-document-btn">Open Document</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("open-document-btn").addEventListener("click", function(event) {
+            var fileInput = document.getElementById("document-input").files[0];
+            if (fileInput) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var documentContent = e.target.result;
+                    document.getElementById("document-text").value = documentContent;
+                }
+                reader.readAsText(fileInput);
+            } else {
+                alert("Please select a document to open.");
+            }
+        });
+
+        document.getElementById("document-text").addEventListener("mouseup", function(event) {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText) {
+                var searchQuery = "https://www.google.com/search?q=" + encodeURIComponent(selectedText);
+                window.open(searchQuery, '_blank');
+            }
+        });
+    </script>
+</body>
+
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search the Document</h1>
+        <form id="document-form" enctype="multipart/form-data">
+            <input type="file" name="document" id="document-input" accept=".txt">
+            <textarea id="document-text" rows="20" cols="80" readonly></textarea>
+            <button type="button" id="open-document-btn">Open Document</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("open-document-btn").addEventListener("click", function(event) {
+            var fileInput = document.getElementById("document-input").files[0];
+            if (fileInput) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var documentContent = e.target.result;
+                    document.getElementById("document-text").value = documentContent;
+                }
+                reader.readAsText(fileInput);
+            } else {
+                alert("Please select a document to open.");
+            }
+        });
+
+        document.getElementById("document-text").addEventListener("mouseup", function(event) {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText) {
+                window.open("https://www.google.com/search?q=" + encodeURIComponent(selectedText), '_blank');
+            }
+        });
+    </script>
+</body>
+
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search the Document</h1>
+        <form id="document-form" enctype="multipart/form-data">
+            <div class="file-input">
+                <input type="file" name="document" id="document-input" accept=".txt">
+                <label for="document-input" id="choose-file-btn">Choose File</label>
+            </div>
+            <textarea id="document-text" rows="20" cols="80" readonly></textarea>
+            <button type="button" id="open-document-btn">Open Document</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("open-document-btn").addEventListener("click", function(event) {
+            var fileInput = document.getElementById("document-input").files[0];
+            if (fileInput) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var documentContent = e.target.result;
+                    document.getElementById("document-text").value = documentContent;
+                }
+                reader.readAsText(fileInput);
+            } else {
+                alert("Please select a document to open.");
+            }
+        });
+
+        document.getElementById("document-text").addEventListener("mouseup", function(event) {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText) {
+                window.open("https://www.google.com/search?q=" + encodeURIComponent(selectedText), '_blank');
+            }
+        });
+    </script>
+</body>
+
+</html>-->
+<!-- ------------------------------------- -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search the Document</h1>
+        <form id="document-form" enctype="multipart/form-data">
+            <div class="file-input">
+                <input type="file" name="document" id="document-input" accept=".txt">
+                <label for="document-input" id="choose-file-btn">Choose File</label>
+            </div>
+            <textarea id="document-text" rows="20" cols="80" readonly></textarea>
+            <button type="button" id="open-document-btn">Open Document</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("open-document-btn").addEventListener("click", function(event) {
+            var fileInput = document.getElementById("document-input").files[0];
+            if (fileInput) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var documentContent = e.target.result;
+                    document.getElementById("document-text").value = documentContent;
+                }
+                reader.readAsText(fileInput);
+            } else {
+                alert("Please select a document to open.");
+            }
+        });
+
+        document.getElementById("document-text").addEventListener("mouseup", function(event) {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText) {
+                window.open("https://www.google.com/search?q=" + encodeURIComponent(selectedText), '_blank');
+            }
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- ---------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search the Document</h1>
+        <form id="document-form" enctype="multipart/form-data">
+            <div class="file-input">
+                <input type="file" name="document" id="document-input" accept=".txt" onchange="displayFileName()">
+                <label for="document-input" id="choose-file-btn">Choose File</label>
+                <span id="selected-file-name"></span>
+                <!-- Display selected file name here -->
+            </div>
+            <textarea id="document-text" rows="20" cols="80" readonly></textarea>
+            <button type="button" id="open-document-btn">Open Document</button>
+        </form>
+    </div>
+
+    <script>
+        function displayFileName() {
+            var fileInput = document.getElementById("document-input");
+            var fileNameSpan = document.getElementById("selected-file-name");
+            if (fileInput.files.length > 0) {
+                fileNameSpan.textContent = fileInput.files[0].name;
+            } else {
+                fileNameSpan.textContent = "";
+            }
+        }
+
+        document.getElementById("open-document-btn").addEventListener("click", function(event) {
+            var fileInput = document.getElementById("document-input").files[0];
+            if (fileInput) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var documentContent = e.target.result;
+                    document.getElementById("document-text").value = documentContent;
+                }
+                reader.readAsText(fileInput);
+            } else {
+                alert("Please select a document to open.");
+            }
+        });
+
+        document.getElementById("document-text").addEventListener("mouseup", function(event) {
+            var selectedText = window.getSelection().toString().trim();
+            if (selectedText) {
+                window.open("https://www.google.com/search?q=" + encodeURIComponent(selectedText), '_blank');
+            }
+        });
+    </script>
+</body>
+
+</html>
